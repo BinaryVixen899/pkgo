@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/joeshaw/fastly-roundtripper/transport"
 	"golang.org/x/time/rate"
 )
 
@@ -32,9 +33,12 @@ func New(token string) *Session {
 
 // NewWithLimiter returns a session with the given token and rate limiter.
 func NewWithLimiter(token string, limiter *rate.Limiter) *Session {
+	t := transport.New("pluralkit")
+	t.AddBackend("pluralkit", "api.pluralkit.me")
+
 	s := &Session{
 		BaseURL: BaseURL + Version,
-		Client:  &http.Client{},
+		Client:  &http.Client{Transport: t},
 		token:   token,
 		rate:    limiter,
 		Timeout: 10 * time.Second,
