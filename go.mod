@@ -1,4 +1,4 @@
-module github.com/starshine-sys/pkgo/v2
+module github.com/binaryvixen899/pkgo/v2
 
 go 1.15
 

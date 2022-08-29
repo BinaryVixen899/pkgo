@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/starshine-sys/pkgo/v2"
+	"github.com/binaryvixen899/pkgo/v2"
 )
 
 type UnknownEventData struct {

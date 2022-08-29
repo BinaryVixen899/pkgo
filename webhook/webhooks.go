@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"strconv"
 
+	"github.com/binaryvixen899/pkgo/v2"
 	"github.com/google/uuid"
-	"github.com/starshine-sys/pkgo/v2"
 )
 
 type WebhookEvent struct {
